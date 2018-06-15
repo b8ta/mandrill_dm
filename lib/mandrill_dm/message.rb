@@ -25,7 +25,7 @@ module MandrillDm
       inline_attachments = mail.attachments.select(&:inline?)
       inline_attachments.collect do |attachment|
         {
-          name: attachment.cid,
+          name: attachment.filename,
           type: attachment.mime_type,
           content: Base64.encode64(attachment.body.decoded)
         }

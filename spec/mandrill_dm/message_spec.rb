@@ -242,7 +242,7 @@ describe MandrillDm::Message do
 
       message = described_class.new(mail)
       expect(message.images).to eq(
-        [{ name: mail.attachments[0].cid,
+        [{ name: mail.attachments[0].filename,
            type: 'image/jpg',
            content: "VGhpcyBpcyBhIHRlc3Q=\n" }]
       )
